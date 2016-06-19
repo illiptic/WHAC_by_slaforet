@@ -50,6 +50,7 @@
         <entry id="MS03" />
         <entry id="MS06" />
         <entry id="MS15" />
+        <entry id="MS29" />
         <entry id="IS06_mercs" />
         <!-- saxon -->
         <entry id="MS16" />
@@ -153,6 +154,8 @@
         <entry id="MS15" />
         <entry id="IS06_mercs" />
         <entry id="MS16" />
+          <entry id="MS29"/>
+
       </only>
       <benefits>
         <ingameeffect>Additionally, this army can include one Cygnar Long Gunner Infantry unit or one Cygnar Trencher Infantry unit. This unit is considered to be a friendly Mercenary unit instead of a Cygnar unit and can include attachments.</ingameeffect>
@@ -231,6 +234,7 @@
         <entry id="YU14_mercs" />
         <entry id="YA08_mercs" />
         <entry id="YS08_mercs" />
+        <entry id="YS11_mercs" />
       </only>
       <benefits>
         <ingameeffect>Magnus’ battlegroup can include Charger and Sentinel light warjacks and up to one Defender heavy warjack. This army can include Sword Knight, Ranger, and Trencher units and Sword Knight, Ranger, and Trencher non-character solos. These models are considered to be friendly Mercenary models instead of Cygnar models and can include attachments.</ingameeffect>
@@ -308,6 +312,7 @@
         <entry id="MJ08" />
         <entry id="MJ14" />
         <entry id="MJ15" />
+        <entry id="MJ19"/>
         <entry id="MU02" />
         <entry id="MU06" />
         <entry id="MA03" />
@@ -320,6 +325,7 @@
         <entry id="MS05" />
         <entry id="MS12" />
         <entry id="MS17" />
+        <entry id="MS32"/>
       </only>
       <benefits>
         <ingameeffect  />
@@ -360,6 +366,7 @@
           <entry id="MJ08" />
           <entry id="MJ14" />
           <entry id="MJ15" />
+          <entry id="MJ19"/>
         </entrygroup>
       </must_have>
       <benefits>
@@ -577,6 +584,7 @@
         <entry id="MS10" />
         <entry id="MS06" />
         <entry id="MS22" />
+          <entry id="MS31"/>
       </only>
       <benefits>
         <ingameeffect>All units in the army are cultists. (Fiona can still gain only 1 focus point from cultists each turn regardless of how many are in her proximity.)</ingameeffect>
@@ -712,30 +720,34 @@
     </availableModels>                 
       
     <level number="1">
-      <only>
+        <only>
         <entry id="MW07" />
-        <entry id="MJ02" />
-        <entry id="MJ03" />
-        <entry id="MJ04" />
-        <entry id="MJ09" />
-        <entry id="MJ10" />
-        <entry id="MJ11" />
-        <entry id="MJ12" />
-        <entry id="MJ13" />
-        <entry id="MJ16" />
-        <entry id="MJ18" />
-        <entry id="MU10" />
-        <entry id="MU11" />
-        <entry id="MU12" />
-        <entry id="MU13" />
-        <entry id="MA01" />
-        <entry id="MA02" />
-        <entry id="MU14" />
-        <entry id="MS08" />
-        <entry id="MS09" />
-        <entry id="MS10" />
-        <entry id="MS11" />
-        <entry id="MS12" />
+        <!-- Mercenary Non-Character warjacks -->
+        <entry id="MJ02" /> <!-- Talon -->
+        <entry id="MJ03" /> <!-- Vanguard -->
+        <entry id="MJ04" /> <!-- Buccaneer -->
+        <entry id="MJ09" /> <!-- Magler -->
+        <entry id="MJ10" /> <!-- Mule -->
+        <entry id="MJ11" /> <!-- Nomad -->
+        <entry id="MJ12" /> <!-- Freebooter -->
+        <entry id="MJ13" /> <!-- Mariner -->
+        <entry id="MJ16" /> <!-- Rover -->
+        <entry id="MJ18" /> <!-- Galleon -->
+        <!-- Sea Dog units, Lady Aiyana & Master Holt -->
+        <entry id="MU10" /> <!-- The Commodore Cannon -->
+        <entry id="MU11" /> <!-- Lady Aiyana & Master Holt -->
+        <entry id="MU12" /> <!-- Press Gangers -->
+        <entry id="MU13" /> <!-- Sea Dog Boarding Crew -->
+        <entry id="MA01" /> <!-- Mr. Walls -->
+        <entry id="MA02" /> <!-- Sea Dog Crew Rifleman -->
+        <entry id="MU14" /> <!-- Sea Dog Deck Gun -->
+        <entry id="MU21" /> <!-- Devil's Shadow Mutineers -->
+        <!-- Bosun Grogspar, Dirty Meg, Doc Killingsworth, First Mate Hawk, Lord Rockbottom -->
+        <entry id="MS08" /> <!-- Bosun Grogspar -->
+        <entry id="MS09" /> <!-- Dirty Meg -->
+        <entry id="MS10" /> <!-- Doc Killingsworth -->
+        <entry id="MS11" /> <!-- First Mate Hawk -->
+        <entry id="MS12" /> <!-- Lord Rockbottom -->
       </only>
       <benefits>
         <ingameeffect  />
@@ -919,6 +931,7 @@
         <entry id="MU15" />
         <entry id="MU18" />
         <entry id="MS16" />
+        <entry id="MS29" />
       </only>
       <benefits>
         <ingameeffect  />
@@ -994,6 +1007,7 @@
         <entry id="MS05" />
         <entry id="MS12" />
         <entry id="MS17" />
+          <entry id="MS32"></entry>
         <entry id="IW01_mercs" />
         <entry id="Lug_mercs" />
       </only>
@@ -1161,6 +1175,75 @@
                 <alterFA entryId="MS28" bonus="1"></alterFA>
             </benefits>
         </level>
-    </tiers>     
-  
+    </tiers>
+    <tiers name="Cyphon - Oppression Overwhelming" casterId="MW12" faction="faction_mercs">
+        <availableModels>
+            <type type="WARJACKS">
+                <models>Mercenary non-character monstrosities</models>
+            </type>
+            <type type="UNITS">
+                <models>Mercenary Drudge units</models>
+            </type>
+            <type type="SOLOS">
+                <models>Mercenary Cephalyx solos</models>
+            </type>
+        </availableModels>
+
+        <level number="1">
+            <only>
+                <entry id="MW12" />
+                <entry id="MM01" />
+                <entry id="MM02" />
+                <entry id="MM03" />
+                <entry id="CU13_mercs" />
+                <entry id="CU15_mercs" />
+                <entry id="MS27" />
+                <entry id="MS28" />
+            </only>
+            <benefits>
+                <ingameeffect  />
+                <alterFA bonus="512" entryId="CU13_mercs" />
+                <alterFA bonus="512" entryId="CU15_mercs" />
+            </benefits>
+        </level>
+        <level number="2">
+            <!-- Must have  2(MS27)-->
+            <must_have>
+                <entrygroup inBattlegroupOnly="false" jackMarshalledOnly="false" minNumber="2">
+                    <entry id="MS27" />
+                </entrygroup>
+            </must_have>
+            <benefits>
+                <ingameeffect>Drudges in the army gain +2SPD during your first turn of the game.</ingameeffect>
+            </benefits>
+        </level>
+        <level number="3">
+            <!-- Must have  3(MM01 MM02 MM03)-->
+            <must_have>
+                <entrygroup inBattlegroupOnly="true" jackMarshalledOnly="false" minNumber="3">
+                    <entry id="MM01" />
+                    <entry id="MM02" />
+                    <entry id="MM03" />
+                </entrygroup>
+            </must_have>
+            <benefits>
+                <ingameeffect>Monstrosities in Cyphon's battlegroup gain Advance Move.</ingameeffect>
+            </benefits>
+        </level>
+        <level number="4">
+            <!-- Must have in battlegroup  2(CU15_mercs)-->
+            <must_have>
+                <entrygroup inBattlegroupOnly="false" jackMarshalledOnly="false" minNumber="2">
+                    <entry id="CU15_mercs" />
+                </entrygroup>
+            </must_have>
+            <benefits>
+                <ingameeffect>Add a minimum-sized Cephalyx Mind Slaver &amp; Drugdes unit to the army free of cost.</ingameeffect>
+                <freeModel>
+                    <entry id="CU13_mercs" />
+                </freeModel>
+            </benefits>
+        </level>
+    </tiers>
+
 </tierslist>

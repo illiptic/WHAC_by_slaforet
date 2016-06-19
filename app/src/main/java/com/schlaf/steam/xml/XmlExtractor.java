@@ -208,11 +208,15 @@ public class XmlExtractor {
 			R.xml.inapp_khador, R.xml.inapp_menoth, R.xml.inapp_mercenaries, R.xml.inapp_retribution,
             R.xml.inapp_everblight, R.xml.inapp_orboros, R.xml.inapp_skorne, R.xml.inapp_trollbloods, R.xml.inapp_minions, R.xml.objectives};
 
-//	int[] XML_FILES = new int[] {R.xml.cygnar, R.xml.khador, R.xml.inapp_menoth, R.xml.cryx,
-//			R.xml.retribution, R.xml.cyriss, R.xml.inapp_mercenaries,
-//			R.xml.orboros, R.xml.everblight, R.xml.skorne, R.xml.trollbloods, R.xml.minions, R.xml.objectives	};
 
-	/** access to local resources */
+    /*
+         int[] XML_FILES = new int[] {R.xml.completed_cryx, R.xml.completed_cygnar, R.xml.completed_cyriss,
+                R.xml.completed_khador, R.xml.completed_menoth, R.xml.completed_mercenaries, R.xml.completed_retribution,
+                R.xml.completed_everblight, R.xml.completed_orboros, R.xml.completed_skorne, R.xml.completed_trollbloods, R.xml.completed_minions, R.xml.objectives};
+  */
+
+
+        /** access to local resources */
 	Resources res;
 	SteamPunkRosterApplication parentApplication;
 
@@ -827,7 +831,7 @@ public class XmlExtractor {
 			}
 			if (eventType == XmlPullParser.START_TAG && SPELL_TAG.equals(xpp.getName())) {
 				Spell spell = loadSpell(xpp);
-				caster.getSpells().add(spell);
+                model.getSpells().add(spell);
 			}
 			if (eventType == XmlPullParser.START_TAG && MODEL_TAG.equals(xpp.getName())) {
 				SingleModel additionnalModel = loadSingleModel(xpp);
@@ -906,7 +910,7 @@ public class XmlExtractor {
 			}
 			if (eventType == XmlPullParser.START_TAG && SPELL_TAG.equals(xpp.getName())) {
 				Spell spell = loadSpell(xpp);
-				warlock.getSpells().add(spell);
+                model.getSpells().add(spell);
 			}
 			if (eventType == XmlPullParser.START_TAG && MODEL_TAG.equals(xpp.getName())) {
 				SingleModel additionnalModel = loadSingleModel(xpp);
@@ -1085,7 +1089,7 @@ public class XmlExtractor {
 			eventType = xpp.next();
 		}
 		
-		solo.setSpells(spells);
+		solo.getModels().get(0).setSpells(spells);
 
 		if (doLog) { Log.d (TAG,"loadSolo - end");}
 		return solo;
@@ -1116,8 +1120,14 @@ public class XmlExtractor {
 			if (eventType == XmlPullParser.START_TAG && WEAPONS_TAG.equals(xpp.getName())) {
 				loadWeapons(xpp,model);
 			}
-			
-			// special capacities of current model
+
+            if (eventType == XmlPullParser.START_TAG && SPELL_TAG.equals(xpp.getName())) {
+                Spell spell = loadSpell(xpp);
+                model.getSpells().add(spell);
+            }
+
+
+            // special capacities of current model
 			if (eventType == XmlPullParser.START_TAG && CAPACITY_TAG.equals(xpp.getName())) {
 				loadModelCapacity(xpp, model);
 			}
@@ -1419,6 +1429,7 @@ public class XmlExtractor {
 			if (eventType == XmlPullParser.START_TAG && ANIMUS_TAG.equals(xpp.getName())) {
 				Spell spell = loadAnimus(xpp);
 				beast.setAnimus(spell);
+                model.getSpells().add(spell);
 			}
 			
 			
@@ -1927,7 +1938,6 @@ public class XmlExtractor {
 			String cost = xpp.getAttributeValue(null, COST_TAG);
 			ua.setCost(extractFromString(cost));
 
-			
 			// load models
 			while (!(eventType == XmlPullParser.END_TAG && UA_TAG
 					.equals(xpp.getName()))) {
@@ -1938,6 +1948,7 @@ public class XmlExtractor {
 						
 						if (model.isJackMarshal()) {
 							container.setJackMarshallViaUA(true);
+                            ua.setJackMarshall(true);
 						}
 						
 						ua.getModels().add(model);

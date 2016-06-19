@@ -12,7 +12,7 @@ import com.schlaf.steam.activities.selectlist.selected.SpellCaster;
  * @author S0085289
  *
  */
-public class Solo extends ArmyElement implements Serializable, Restrictable, SpellCaster {
+public class Solo extends ArmyElement implements SpellCaster, Serializable, Restrictable{
 
 	/**
 	 * 
@@ -53,8 +53,6 @@ public class Solo extends ArmyElement implements Serializable, Restrictable, Spe
 	
 	/** if solo is an attachment, list the units it can be attached to */
 	private ArrayList<String> allowedUnitsToAttach = new ArrayList<String>();
-	
-	private ArrayList<Spell> spells = new ArrayList<Spell>(10);
 	
 	private ArrayList<String> tiersInWhicAllowedToAppear = new ArrayList<String>();
 	
@@ -138,16 +136,6 @@ public class Solo extends ArmyElement implements Serializable, Restrictable, Spe
 	}
 
 	@Override
-	public ArrayList<Spell> getSpells() {
-		return spells;
-	}
-
-	@Override
-	public void setSpells(ArrayList<Spell> spells) {
-		this.spells = spells;
-	}
-
-	@Override
 	public ArrayList<String> getTiersInWhichAllowedToAppear() {
 		return tiersInWhicAllowedToAppear;
 	}
@@ -163,6 +151,17 @@ public class Solo extends ArmyElement implements Serializable, Restrictable, Spe
 	@Override
 	public String getCostString() {
 		return String.valueOf(baseCost);
-	}	
-	
+	}
+
+
+    public ArrayList<Spell> getSpells() {
+        if (getModels()!=null && getModels().size() > 0) {
+            return getModels().get(0).getSpells();
+        }
+        return new ArrayList<Spell>();
+    }
+
+    public void setSpells(ArrayList<Spell> spells) {
+        throw new UnsupportedOperationException();
+    }
 }

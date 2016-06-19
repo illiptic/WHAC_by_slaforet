@@ -103,7 +103,14 @@
           <feat title="" />
           <works_for id="faction_cryx" />
         </warcaster>
+          <warcaster id="MW12" name="Cognifex Cyphon" full_name="Cognifex Cyphon" generation="P" qualification="Mercenary Cephalyx Warcaster" focus="7" warjack_points="6" fa="C">
+              <basestats name="Thexus" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" hitpoints="18" />
+              <weapons />
+              <feat title="" />
+              <works_for id="faction_cryx" />
+          </warcaster>
       </warcasters>
+
       <warjacks>
         <warjack id="MJ04" name="Buccaneer" full_name="Buccaneer" damage_grid="xxxxxxx....x.......L..R.LLMCRRxMMCCx" cost="3" qualification="Light Warjack" fa="U">
           <basestats name="Buccaneer" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" />
@@ -413,18 +420,21 @@
           <basestats name="Subduer" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" />
           <weapons />
           <restricted_to id="MW11" />
+            <restricted_to id="MW12" />
         </warjack>
         
         <warjack id="MM02" name="Warden" full_name="Warden" damage_grid="........................LLMBRRLMMBBR" cost="6" qualification="Mercenary Cephalyx Heavy Monstrosity" fa="U">
           <basestats name="Warden" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" />
           <weapons />
           <restricted_to id="MW11" />
+            <restricted_to id="MW12" />
         </warjack>
 
         <warjack id="MM03" name="Wrecker" full_name="Wrecker" damage_grid="........................LLMBRRLMMBBR" cost="7" qualification="Mercenary Cephalyx Heavy Monstrosity" fa="U">
           <basestats name="Wrecker" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" />
           <weapons />
           <restricted_to id="MW11" />
+            <restricted_to id="MW12" />
         </warjack>
 
         
@@ -513,8 +523,28 @@
           <weapons>
           </weapons>
           <restricted_to id="IW03_mercs" />
-        </warbeast>        
-        
+        </warbeast>
+
+          <warbeast  id="IB10_mercs" name="Battle Boar" full_name="Battle Boar" damage_spiral="6-10-6" fury="3" threshold="7" cost="4" qualification="Minion Farrow Light Warbeast" fa="U">
+              <basestats name="Battle Boar" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" />
+              <weapons>
+              </weapons>
+              <restricted_to id="IW03_mercs" />
+          </warbeast>
+
+          <warbeast  id="IB11_mercs" name="Splatter Boar" full_name="Splatter Boar" damage_spiral="6-10-6" fury="3" threshold="7" cost="5" qualification="Minion Farrow Light Warbeast" fa="U">
+              <basestats name="Splatter Boar" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" />
+              <weapons>
+              </weapons>
+              <restricted_to id="IW03_mercs" />
+          </warbeast>
+
+          <warbeast  id="IB12_mercs" name="Blind Walker" full_name="Blind Walker" damage_spiral="5-14-8" fury="3" threshold="10" cost="7" qualification="Minion Gatorman Heavy Warbeast" fa="U">
+              <basestats name="Walker" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" />
+              <weapons>
+              </weapons>
+              <restricted_to id="IW04_mercs" />
+          </warbeast>
       </warbeasts>
       
       <colossals>
@@ -542,6 +572,14 @@
           <restricted_to id="MS17" />
         </colossal>
       </colossals>
+        <battleEngines>
+            <battleEngine id="ME01" name="Hammerfall Siege Crawler" full_name="Hammerfall Siege Crawler"  qualification="Mercenary Rhulic Battle Engine" fa="2" cost="9" >
+                <basestats name="Siege Crawler" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" hitpoints="22"/>
+                <weapons />
+                <works_for id="faction_khador" />
+                <works_for id="faction_cygnar" />
+            </battleEngine>
+        </battleEngines>
       <units>
         <unit id="MU09" name="Alexia Ciannor &amp; the Risen" full_name="Alexia Ciannor &amp; the Risen" base_cost="5" baseCount="10" full_cost="-" fullCount="-" qualification="Character Unit" fa="C">
           <basestats name="Alexia" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" hitpoints="5" />
@@ -759,10 +797,6 @@
           <model id="Grunts">
             <basestats name="undefined" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" />
           </model>
-          <works_for id="faction_menoth" />
-          <works_for id="faction_khador" />
-          <works_for id="faction_cryx" />
-          <works_for id="faction_cygnar" />
         </unit>
         <unit id="YU05_mercs" name="Trencher Infantry" full_name="Trencher Infantry" base_cost="6" baseCount="6" full_cost="10" fullCount="10" qualification="Unit" fa="2" has_unit_attachment="true" has_weapon_attachment="true">
           <basestats name="Leader and grunts" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" />
@@ -805,6 +839,17 @@
           </model>
           <works_for id="faction_cryx" />
         </unit>
+
+          <unit id="IU10_mercs" name="Lynus Wesselbaum &amp; Edrea Lloryrr" full_name="Lynus Wesselbaum &amp; Edrea Lloryrr" qualification="Mercenary Minion Character Unit" fa="C" base_cost="3" full_cost="-" baseCount="3" fullCount="-" completed="false">
+              <basestats name="Lynus" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" hitpoints="5" officer="true"/>
+              <weapons>
+              </weapons>
+              <model>
+                  <basestats name="EDREA" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" hitpoints="5" />
+              </model>
+              <works_for id="faction_cygnar" />
+          </unit>
+
         <!-- below, allies and other special cases... -->
         <!-- cygnar allies & mercs -->
         <unit id="YU12_mercs" name="Precursor Knights" full_name="Precursor Knights" base_cost="5" baseCount="6" full_cost="8" fullCount="10" qualification="Unit" fa="2" has_unit_attachment="true">
@@ -1188,7 +1233,15 @@
         <solo id="YS08_mercs" name="Trencher Master Gunner" full_name="Trencher Master Gunner" cost="2" qualification="Solo" fa="2">
           <basestats name="Trencher Master Gunner" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" hitpoints="5" />
           <weapons />
+            <only_in_tier id="Magnus2 - Bad Seeds (NQ36)" />
         </solo>
+          <solo id="YS11_mercs" name="Trench Buster (Magnus: Bad Seeds)" full_name="Trench Buster (Magnus: Bad Seeds)" cost="3" qualification="Cygnar Ogrun Trencher Solo" fa="2">
+              <basestats name="Trench Buster" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" hitpoints="8" />
+              <weapons>
+              </weapons>
+              <only_in_tier id="Magnus2 - Bad Seeds (NQ36)" />
+          </solo>
+
         <!-- ashlynn viva la resistance -->
         <solo id="YS02_mercs" name="Gun Mage Captain Adept" full_name="Gun Mage Captain Adept" cost="2" qualification="Solo" fa="2">
           <basestats name="Gun Mage Captain Adept" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" hitpoints="5" />
@@ -1232,34 +1285,66 @@
               <restricted_to id="MU08"/>
               <restricted_to id="MU18"/>
               <restricted_to id="MU20"/>
-            <only_in_tier id="Unwilling and Able"/>
-              <only_in_tier id="Exulon - Will of Darkness"/>
+            <only_in_tier id="Puppet Masters"/>
+            <only_in_tier id="Exulon - Will of Darkness"/>
+            <only_in_tier id="Cyphon - Oppression Overwhelming"/>
         </solo>
         
         <solo id="MS27" name="Cephalyx Agitator" full_name="Cephalyx Agitator" fa="3" cost="2" qualification="Mercenary Solo" >
               <basestats name="Agitator" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" hitpoints="5" />
               <weapons />
-              <only_in_tier id="Unwilling and Able"/>
+              <only_in_tier id="Puppet Masters"/>
               <only_in_tier id="Exulon - Will of Darkness"/>
+              <only_in_tier id="Cyphon - Oppression Overwhelming"/>
         </solo>
-        
+
+        <solo id="MS29" name="Sergeant Nicolas Verendrye" full_name="Sergeant Nicolas Verendrye" fa="C" cost="3" qualification="Mercenary Steelhead Character Solo" >
+          <basestats name="Nicolas" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" hitpoints="5" />
+          <weapons />
+          <works_for id="faction_cryx"/>
+          <works_for id="faction_cygnar"/>
+          <works_for id="faction_khador"/>
+          <works_for id="faction_menoth"/>
+        </solo>
+
+
+          <solo id="MS30" name="Swamp Gobber River Raiders" full_name="Swamp Gobber River Raiders" qualification="Mercenary Minion Privateer Sea Dog Solo" fa="3" cost="2">
+              <basestats name="Raider" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0"  />
+              <weapons />
+              <works_for id="faction_cryx"/>
+          </solo>
+
+
+          <solo id="MS31" name="Savio Montero Acosta" full_name="Savio Montero Acosta" fa="C" cost="3" qualification="Mercenary Thamarite Character Solo" >
+              <basestats name="Acosta" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" hitpoints="5" />
+              <weapons />
+              <works_for id="faction_cygnar"/>
+          </solo>
+
+          <solo id="MS32" name="Hutchuck, Ogrun Bounty Hunter" full_name="Hutchuck, Ogrun Bounty Hunter" fa="C" cost="3" qualification="Mercenary Minions Character Solo" >
+              <basestats name="HUTCHUCK" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" hitpoints="8" />
+              <works_for id="faction_cygnar"/>
+              <works_for id="faction_khador"/>
+          </solo>
+
+
         <!-- cryx solos that can be taken in cephalyx contract -->
         <solo id="CS02_mercs" name="Bloat Thrall" full_name="Bloat Thrall" cost="2" qualification="Solo" fa="2">
           <basestats name="Bloat Thrall" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" hitpoints="8" />
           <weapons />
-            <only_in_tier id="Unwilling and Able"/>
+            <only_in_tier id="Puppet Masters"/>
         </solo>
         
         <solo id="CS05_mercs" name="Machine Wraith" full_name="Machine Wraith" cost="1" qualification="Solo" fa="3">
           <basestats name="Machine Wraith" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" />
           <weapons />
-            <only_in_tier id="Unwilling and Able"/>
+            <only_in_tier id="Puppet Masters"/>
         </solo>
         
         <solo id="CS06_mercs" name="Pistol Wraith" full_name="Pistol Wraith" cost="3" qualification="Solo" fa="2">
           <basestats name="Pistol Wraith" spd="0" str="0" mat="0" rat="0" def="0" arm="0" cmd="0" hitpoints="5" />
           <weapons />
-            <only_in_tier id="Unwilling and Able"/>
+            <only_in_tier id="Puppet Masters"/>
         </solo>
         
             
